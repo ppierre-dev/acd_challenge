@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "903fffa5b539223f8ea58228d5e7c005",
+    "content-hash": "4654b9e62c33e5db24d27f2dbffc433e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5808,16 +5808,16 @@
         },
         {
             "name": "symfony/runtime",
-            "version": "v6.2.0",
+            "version": "v6.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/runtime.git",
-                "reference": "45a63a5885f92741c8def9cbd81c925e6b5b891d"
+                "reference": "bf27ed7b4317982b06f8cc37255b8a315d5a9686"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/runtime/zipball/45a63a5885f92741c8def9cbd81c925e6b5b891d",
-                "reference": "45a63a5885f92741c8def9cbd81c925e6b5b891d",
+                "url": "https://api.github.com/repos/symfony/runtime/zipball/bf27ed7b4317982b06f8cc37255b8a315d5a9686",
+                "reference": "bf27ed7b4317982b06f8cc37255b8a315d5a9686",
                 "shasum": ""
             },
             "require": {
@@ -5864,7 +5864,7 @@
             "description": "Enables decoupling PHP applications from global state",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/runtime/tree/v6.2.0"
+                "source": "https://github.com/symfony/runtime/tree/v6.2.5"
             },
             "funding": [
                 {
@@ -5880,20 +5880,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-02T09:08:04+00:00"
+            "time": "2023-01-20T17:45:48+00:00"
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v6.2.3",
+            "version": "v6.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",
-                "reference": "313c1c65828b0524a5e5e590d667890d55964ebe"
+                "reference": "2f7f0b79b2acb6f497e8a8f24ff86a5d7e36170f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/313c1c65828b0524a5e5e590d667890d55964ebe",
-                "reference": "313c1c65828b0524a5e5e590d667890d55964ebe",
+                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/2f7f0b79b2acb6f497e8a8f24ff86a5d7e36170f",
+                "reference": "2f7f0b79b2acb6f497e8a8f24ff86a5d7e36170f",
                 "shasum": ""
             },
             "require": {
@@ -5964,7 +5964,7 @@
             "description": "Provides a tight integration of the Security component into the Symfony full-stack framework",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/security-bundle/tree/v6.2.3"
+                "source": "https://github.com/symfony/security-bundle/tree/v6.2.5"
             },
             "funding": [
                 {
@@ -5980,7 +5980,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-21T09:01:37+00:00"
+            "time": "2023-01-13T09:31:36+00:00"
         },
         {
             "name": "symfony/security-core",
@@ -7454,6 +7454,53 @@
                 }
             ],
             "time": "2022-12-14T16:11:27+00:00"
+        },
+        {
+            "name": "symfonycasts/verify-email-bundle",
+            "version": "v1.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/verify-email-bundle.git",
+                "reference": "eb7bc997f36ad872a0d56bf209fe37fed148b0a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/eb7bc997f36ad872a0d56bf209fe37fed148b0a7",
+                "reference": "eb7bc997f36ad872a0d56bf209fe37fed148b0a7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.2.5",
+                "symfony/config": "^5.4 | ^6.0",
+                "symfony/dependency-injection": "^5.4 | ^6.0",
+                "symfony/deprecation-contracts": "^2.2 | ^3.0",
+                "symfony/http-kernel": "^5.4 | ^6.0",
+                "symfony/routing": "^5.4 | ^6.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.7",
+                "doctrine/persistence": "^2.0",
+                "symfony/framework-bundle": "^5.4 | ^6.0",
+                "symfony/phpunit-bridge": "^5.4 | ^6.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SymfonyCasts\\Bundle\\VerifyEmail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple, stylish Email Verification for Symfony",
+            "support": {
+                "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.13.0"
+            },
+            "time": "2023-01-04T12:46:15+00:00"
         },
         {
             "name": "twig/extra-bundle",
