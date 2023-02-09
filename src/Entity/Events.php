@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EventsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -26,6 +28,14 @@ class Events
     #[ORM\ManyToOne(inversedBy: 'events')]
     #[ORM\JoinColumn(nullable: false)]
     private ?user $user_id = null;
+
+    #[ORM\ManyToMany(targetEntity: user::class, inversedBy: 'events')]
+    private Collection $participant_id;
+
+    public function __construct()
+    {
+        $this->participant_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -76,6 +86,30 @@ class Events
     public function setUserId(?user $user_id): self
     {
         $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, user>
+     */
+    public function getParticipantId(): Collection
+    {
+        return $this->participant_id;
+    }
+
+    public function addParticipantId(user $participantId): self
+    {
+        if (!$this->participant_id->contains($participantId)) {
+            $this->participant_id->add($participantId);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipantId(user $participantId): self
+    {
+        $this->participant_id->removeElement($participantId);
 
         return $this;
     }
