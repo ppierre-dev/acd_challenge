@@ -24,9 +24,8 @@
 							<div class="form-group form-check">
 								<input type="checkbox" id="remember_me" name="_remember_me" class="form-check-input">
 								<label class="form-check-label" for="remember_me">Se souvenir de moi</label>
-							</div>
-							<input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/>
-							
+							</div>					
+							<input type="hidden" name="_target_path" value="/">		
 							<button type="submit" class="btn btn-primary btn-block">Se connecter</button>
 						</form>
 					</div>
