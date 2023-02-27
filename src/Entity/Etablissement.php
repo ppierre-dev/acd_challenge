@@ -5,116 +5,115 @@ namespace App\Entity;
 use App\Repository\EtablissementRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: EtablissementRepository::class)]
+#[ORM\Entity(repositoryClass:EtablissementRepository::class)]
 class Etablissement
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+#[ORM\GeneratedValue]
+#[ORM\Column]
+private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+#[ORM\Column(length : 255)]
+private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $adresse = null;
+#[ORM\Column(length : 255)]
+private ?string $adresse = null;
 
-    #[ORM\Column(length: 5)]
-    private ?string $code_postal = null;
+#[ORM\Column(length : 5)]
+private ?string $code_postal = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $ville = null;
+#[ORM\Column(length : 255)]
+private ?string $ville = null;
 
-    #[ORM\OneToMany(mappedBy: 'etablissement_id', targetEntity: User::class)]
-    private Collection $users;
+#[ORM\OneToMany(mappedBy : 'etablissement_id', targetEntity:User::class)]
+private Collection $users;
 
-    public function __construct()
+public function __construct()
     {
-        $this->users = new ArrayCollection();
+    $this->users = new ArrayCollection();
+}
+
+function getId(): ?int
+    {
+    return $this->id;
+}
+
+function getNom(): ?string
+    {
+    return $this->nom;
+}
+
+function setNom(string $nom): self
+    {
+    $this->nom = $nom;
+
+    return $this;
+}
+
+function getAdresse(): ?string
+    {
+    return $this->adresse;
+}
+
+function setAdresse(string $adresse): self
+    {
+    $this->adresse = $adresse;
+
+    return $this;
+}
+
+function getCodePostal(): ?string
+    {
+    return $this->code_postal;
+}
+
+function setCodePostal(string $code_postal): self
+    {
+    $this->code_postal = $code_postal;
+
+    return $this;
+}
+
+function getVille(): ?string
+    {
+    return $this->ville;
+}
+
+function setVille(string $ville): self
+    {
+    $this->ville = $ville;
+
+    return $this;
+}
+
+/**
+ * @return Collection<int, User>
+ */
+function getUsers(): Collection
+    {
+    return $this->users;
+}
+
+function addUser(User $user): self
+    {
+    if (!$this->users->contains($user)) {
+        $this->users->add($user);
+        $user->setEtablissementId($this);
     }
 
-    public function getId(): ?int
+    return $this;
+}
+
+function removeUser(User $user): self
     {
-        return $this->id;
-    }
-
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getAdresse(): ?string
-    {
-        return $this->adresse;
-    }
-
-    public function setAdresse(string $adresse): self
-    {
-        $this->adresse = $adresse;
-
-        return $this;
-    }
-
-    public function getCodePostal(): ?string
-    {
-        return $this->code_postal;
-    }
-
-    public function setCodePostal(string $code_postal): self
-    {
-        $this->code_postal = $code_postal;
-
-        return $this;
-    }
-
-    public function getVille(): ?string
-    {
-        return $this->ville;
-    }
-
-    public function setVille(string $ville): self
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->setEtablissementId($this);
+    if ($this->users->removeElement($user)) {
+        // set the owning side to null (unless already changed)
+        if ($user->getEtablissementId() === $this) {
+            $user->setEtablissementId(null);
         }
-
-        return $this;
     }
 
-    public function removeUser(User $user): self
-    {
-        if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getEtablissementId() === $this) {
-                $user->setEtablissementId(null);
-            }
-        }
-
-        return $this;
-    }
+    return $this;
+}
 }
