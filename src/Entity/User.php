@@ -21,6 +21,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $nom = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $prenom = null;
+
     #[ORM\Column]
     private array $roles = [];
 
@@ -177,6 +183,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(?string $prenom): self
+    {
+        $this->prenom = $prenom;
 
         return $this;
     }
