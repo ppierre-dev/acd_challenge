@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container-fluid bg-light d-flex flex-column justify-content-center align-items-center w-100" style="height: 100vh;">
+    <div class="card p-4 w-50">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Profile</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3 d-flex align-items-center">
+          <img src="" alt="Img" class="rounded-circle w-100">
+        </div>
+        <div class="col-md-9">
+          <div class="form-group mt-4">
+            <label for="status">Status:</label>
+            <input type="text" class="form-control" id="status" value="Elève">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" rows="3">Je suis un élève passionné de Symfony</textarea>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" value="johndoe@example.com">
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input type="password" class="form-control" id="password" value="********">
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone:</label>
+            <input type="tel" class="form-control" id="telephone" value="0601020304">
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center w-100">
+        <a href="#" class="btn btn-danger mt-5 w-50">Déconnexion</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
