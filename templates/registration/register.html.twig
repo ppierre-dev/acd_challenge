@@ -9,20 +9,18 @@
 			<div class="col-lg-5 col-md-8 col-sm-10">
 				<div class="card shadow-lg">
 					<div class="card-header bg-primary text-white">
-						<h3 class="card-title">Inscription</h3>
+						<h3 class="card-title">Création d'un Utilisateur</h3>
 					</div>
 					<div class="card-body">
-						<h4 class="mb-3">Remplissez le formulaire d'inscription</h4>
 						{{ form_start(registrationForm) }}
-						{{ form_row(registrationForm.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Votre prénom', 'required': 'required'}}) }}
-						{{ form_row(registrationForm.nom, {'attr': {'class': 'form-control', 'placeholder': 'Votre nom', 'required': 'required'}}) }}
-						{{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Votre email', 'required': 'required'}}) }}
-						{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Votre mot de passe', 'required': 'required'}, 'label': 'Mot de passe'}) }}
-						{{ form_row(registrationForm.agreeTerms, {'label': 'J\'accepte les conditions générales'}) }}
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-            <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
-          {{ form_end(registrationForm) }}
+						{{ form_row(registrationForm.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prénom', 'required': 'required'}}) }}
+						{{ form_row(registrationForm.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom', 'required': 'required'}}) }}
+						{{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email', 'required': 'required'}}) }}
+						{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe', 'required': 'required'}, 'label': 'Mot de passe'}) }}
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+						<div class="row text-center">
+							<button type="submit" class="btn btn-primary btn-block mt-2">S'inscrire</button>
+						</div>
 					</div>
 				</div>
 			</div>
