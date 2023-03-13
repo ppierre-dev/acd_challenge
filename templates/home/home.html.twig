@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div
+        {% for event in events %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <a>{{ event.title }}</a>
+                </div>
+            </div>	
+        {% endfor %}
+    </div>
+{% endblock %}
