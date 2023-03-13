@@ -7,3 +7,7 @@ controllers:
 app_login_cha_web:
   path: /login
   controller: App\Controller\LoginController::index
+
+app_home_cha_web:
+  path: /home
+  controller: App\Controller\HomePageController::index
