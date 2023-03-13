@@ -22,4 +22,12 @@ class UserController extends AbstractController
       'controller_name' => 'UserController',
     ]);
   }
+
+  #[Route('/users/new', name: 'users_new')]
+  function new()
+  {
+    return $this->render('user/new.html.twig', [
+      'controller_name' => 'UserController',
+    ]);
+  }
 }
