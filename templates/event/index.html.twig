@@ -10,7 +10,6 @@
             <tr>
                 <th>Id</th>
                 <th>Date</th>
-                <th>Date_inscription</th>
                 <th>Name</th>
             </tr>
         </thead>
@@ -19,7 +18,8 @@
             <tr>
                 <td>{{ event.id }}</td>
                 <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : ''  }}</td>
-                <td>{{ event.date_inscription ? event.date_inscription|date('Y-m-d H:i:s') : ''  }}</td>
+                <td>{{ event.name}}</td>
+
                 <td>
                     <a href="{{ path('app_event_show', {'id': event.id}) }}">show</a>
                     <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>

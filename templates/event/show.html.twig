@@ -13,15 +13,11 @@
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{{ event.date|date('Y-m-d H:i:s') : ''  }}</td>
+                <td>{{ event.date|date('Y-m-d H:i:s')}}</td>
             </tr>
             <tr>
-                <th>Date_Inscription</th>
-                <td>{{ event.date_inscription ? event.date_inscription|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ event.title }}</td>
+                <th>Name</th>
+                <td>{{ event.name }}</td>
             </tr>
         </tbody>
     </table>
