@@ -8,6 +8,14 @@ app_login_cha_web:
   path: /login
   controller: App\Controller\LoginController::index
 
+events:
+  path: /event
+  controller: App\Controller\EventController::index
+
+users:
+  path: /user
+  controller: App\Controller\UserController::index
+  
 app_home_cha_web:
   path: /home
   controller: App\Controller\HomePageController::index
