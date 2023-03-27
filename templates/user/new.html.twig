@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container w-25 row mx-auto h-100 align-items-center">
+		<form>
+			<div class="form-group">
+				<label for="nom">Nom:</label>
+				<input type="text" class="form-control" id="nom" name="nom" required>
+			</div>
+			<div class="form-group">
+				<label for="prenom">Prénom:</label>
+				<input type="text" class="form-control" id="prenom" name="prenom" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="permissions">Permissions:</label>
+				<select class="form-control" id="permissions" name="permissions">
+					<option value="">-- Sélectionnez une option --</option>
+					<option value="Lecture">Lecture seule</option>
+					<option value="Écriture">Écriture</option>
+					<option value="Admin">Admin</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary mt-4 w-100">Nouvel utilisateur</button>
+		</form>
+	</div>
+{% endblock %}
