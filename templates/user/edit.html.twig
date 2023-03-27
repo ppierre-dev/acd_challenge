@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container w-25 row mx-auto h-100 align-items-center">
+		<form>
+			<div class="form-group">
+				<label for="nom">Ancien mot de passe :</label>
+				<input type="text" class="form-control" id="nom" name="nom" required>
+			</div>
+			<div class="form-group">
+				<label for="prenom">Nouveau mot de passe :</label>
+				<input type="text" class="form-control" id="prenom" name="prenom" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Confirmation de votre mot de passe : </label>
+				<input type="email" class="form-control" id="email" name="email" required>
+			</div>
+			<button type="submit" class="btn btn-primary mt-4 w-100">Modifier votre mot de passe</button>
+		</form>
+	</div>
+{% endblock %}
